@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script defer src="./js/customPopup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <title>customPopup.js</title>
+</head>
+
+<style>
+  html,
+  body {
+    background-color: #f9f9f9f9;
+    font-family: 'Noto Sans KR';
+  }
+
+  #viewport {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 75px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .demo-tit {
+    line-height: 1.7em;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 100px;
+  }
+
+  .demo-stit {
+    margin-bottom: 0;
+  }
+
+  .demo-stit {
+    font-size: 24px;
+    line-height: 1em;
+    font-weight: 500;
+  }
+
+
+  pre code {
+    font-family: 'IBM Plex Mono' !important;
+  }
+
+  ul>li:not(:last-child) {
+    margin-bottom: 25px;
+  }
+</style>
+
+<body>
+  <div id="viewport">
+    <div id="popup01"></div>
+    <div id="popup02"></div>
+    <div id="popup03"></div>
+    <div id="popup04"></div>
+    <div id="popup05"></div>
+    <div id="popup06"></div>
+    <div id="popup07"></div>
+    <div id="popup08"></div>
+    <div id="popup09"></div>
+    <div id="popup10"></div>
+    <div id="popup11"></div>
+
+    <h1 class="demo-tit">
+      customPopup.js는 간편하게 팝업을 생성할 수 있는 Javascript 플러그인 입니다. <br>
+      별도의 css 설정 없이 팝업을 생성할 수 있으며 일정기간 열지 않기 기능을 제공합니다.
+    </h1>
+
+    <ul>
+      <li>
+        <h2 class="demo-stit">HTML</h2>
+        <pre>
+  <code class="html">
+&lt;div id="popup"&gt;a&lt;/div&gt; // id 사용을 권장합니다. (cookie명 = Node id)
+  </code>
+</pre>
+      </li>
+      <li>
+        <h2 class="demo-stit">Javascript</h2>
+        <pre>
+  <code class="javascript">
+$('#popup').customPopup({
+  width: '300px', // 팝업 사이즈 [기본값 300px]
+  top: '50px', // 위치값 [기본값 0px]
+  left: '50px', // 위치값 [기본값 0px]
+  imgSrc: 'https://via.placeholder.com/600x700/000000/ffffff?text=Pop-up-img', // 이미지 경로
+  imgAlt: '첫 번째 팝업 이미지', // 이미지 alt 속성
+  period: 1, // 다시 열지 않기 기간 [기본값 1]
+  borderColor: '#000' // 팝업 및 버튼 테두리 color [기본값 #999999] 
+});
+  </code>
+</pre>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    $(function () {
+
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+
+      $('#popup01').customPopup({
+        width: '300px',
+        top: '50px',
+        left: '50px',
+        imgSrc: 'https://via.placeholder.com/600x700/000000/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 1,
+        borderColor: '#000'
+      });
+
+      $('#popup02').customPopup({
+        width: '350px',
+        left: '350px',
+        imgSrc: 'https://via.placeholder.com/600x700/9c27b0/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 2,
+        borderColor: '#ddd'
+      });
+
+      $('#popup03').customPopup({
+        width: '400px',
+        top: '50px',
+        left: '500px',
+        imgSrc: 'https://via.placeholder.com/600x700/2d7bdb/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 3,
+        borderColor: '#333'
+      });
+
+      $('#popup04').customPopup({
+        width: '300px',
+        top: '50px',
+        left: '1000px',
+        imgSrc: 'https://via.placeholder.com/600x700/60db2d/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 4,
+        borderColor: '#ddd'
+      });
+
+      $('#popup05').customPopup({
+        width: '300px',
+        top: '-50px',
+        left: '750px',
+        imgSrc: 'https://via.placeholder.com/600x700/cda73d/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 5,
+        borderColor: '#eee'
+      });
+
+      $('#popup06').customPopup({
+        width: '300px',
+        top: '400px',
+        left: '50px',
+        imgSrc: 'https://via.placeholder.com/600x700/e988c6/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 6,
+        borderColor: '#bbb'
+      });
+
+      $('#popup07').customPopup({
+        width: '300px',
+        top: '450px',
+        left: '650px',
+        imgSrc: 'https://via.placeholder.com/600x700/15a562/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 7,
+        borderColor: '#ccc'
+      });
+
+      $('#popup08').customPopup({
+        width: '300px',
+        top: '550px',
+        left: '550px',
+        imgSrc: 'https://via.placeholder.com/600x700/f33f16/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 8,
+        borderColor: '#999'
+      });
+
+      $('#popup09').customPopup({
+        width: '500px',
+        top: '50px',
+        left: '1250px',
+        imgSrc: 'https://via.placeholder.com/600x700/870624/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 9,
+        borderColor: '#666'
+      });
+
+      $('#popup10').customPopup({
+        width: '300px',
+        top: '500px',
+        left: '1050px',
+        imgSrc: 'https://via.placeholder.com/600x700/5643a3/ffffff?text=Pop-up-img',
+        imgAlt: '팝업 이미지',
+        period: 10,
+        borderColor: '#ddd'
+      });
+    })
+  </script>
+</body>
+
+</html>
