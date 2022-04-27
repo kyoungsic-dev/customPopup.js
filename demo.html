@@ -54,11 +54,12 @@
         <ul class="demo-body__list">
           <li>
             <h2>사용방법</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat optio, molestias aliquam quo, et voluptatum ducimus, nulla modi maxime quas recusandae. Pariatur, delectus culpa facilis consectetur eligendi iste nesciunt doloribus.</p>
             <h3 class="demo__pre-type">HTML</h3>
 <pre><code class="html">
-  &lt;script src="/js/customPopup.js"&gt;&lt;/script&gt;
+  &lt;script src="/js/customPopup.js"&gt;&lt;/script&gt; &lt!-- import customPopup.js --&gt;
 
+  &lt!-- 팝업 마크업 생성 --&gt;
+  &lt;div id="popup"&gt;&lt;/div&gt; &lt!-- ※ 쿠키가 해당 마크업의 id값으로 생성되기 때문에 고유의 id 값을 가진 태그를 생성해주어야 함! --&gt;
 </code></pre>
             <h3 class="demo__pre-type">Javascript</h3>
 <pre><code class="Javascript">
