@@ -48,7 +48,8 @@
             'width': SETTINGS.width,
             'top': SETTINGS.top,
             'left': SETTINGS.left,
-            'border': `1px solid ${SETTINGS.borderColor}`
+            'border': `1px solid ${SETTINGS.borderColor}`,
+            'z-index': '99999999',
           })
           .find('.popup__img img')
           .css({
